@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* light theme surface tokens */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f6f7fb;
+  --color-border: #e7e9f0;
+  --color-text: #14161f;
+  --color-text-muted: #6b7080;
+
+  /* single source of truth for the brand gradient */
+  --grad-from: #fb923c;
+  --grad-via: #ec4899;
+  --grad-to: #8b5cf6;
+  --brand-gradient: linear-gradient(100deg, var(--grad-from) 0%, var(--grad-via) 52%, var(--grad-to) 100%);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-label {
+  font-family: var(--font-mono);
+}
+
+.text-gradient {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-brand {
+  background: var(--brand-gradient);
+}
+
+.btn-gradient {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  font-weight: 600;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+.btn-gradient:hover {
+  filter: brightness(1.06);
+}
+.btn-gradient:active {
+  transform: scale(0.98);
+}
+
+.btn-dark {
+  background: #14161f;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.btn-dark:hover {
+  background: #262936;
+}
+.btn-dark:active {
+  transform: scale(0.98);
+}
+
+::selection {
+  background: var(--grad-via);
+  color: #fff;
+}
