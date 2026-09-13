@@ -16,7 +16,7 @@ export default function App() {
 
   // Fetch the technology data from the JSON file on mount.
   useEffect(() => {
-    fetch("/data/technologies.json")
+    fetch(`${import.meta.env.BASE_URL}data/technologies.json`)
       .then((res) => res.json())
       .then((data) => setTechnologies(data))
       .catch(() => toast.error("Couldn't load technologies. Please refresh."))
